@@ -68,13 +68,17 @@ while :; do
 
   clear
 
+  dateToday=`date "+%Y-%m-%d"`
+  dateStart="2015-12-20"
+  daysdiff=$(((`date -jf %Y-%m-%d $dateToday +%s` - `date -jf %Y-%m-%d $dateStart +%s`)/86400))
+
   printf "${STYLE_BOLD}${STYLE_YELLOW}%s%s " "$TITLE_CSNO" "${WIDTH_COL:${#TITLE_CSNO}}"
   printf "%s%s " "$TITLE_LCT" "${WIDTH_COL:${#TITLE_LCT}}"
   printf "%s%s " "$TITLE_BGN" "${WIDTH_COL:${#TITLE_BGN}}"
   printf "%s%s " "$TITLE_END" "${WIDTH_COL:${#TITLE_END}}"
   printf "%s%s${STYLE_RESET} " "$TITLE_ST" "${WIDTH_COL:${#TITLE_ST}}"
   printf "${STYLE_BOLD}${STYLE_WHITE}  %s${STYLE_RESET}" "`date`"
-  printf "\n%s %s %s %s %s   ${STYLE_BOLD}%s${STYLE_RESET} ${STYLE_LMAG}%s${STYLE_RESET} ${STYLE_BOLD}%s${STYLE_RESET}\n" $LINE_COL $LINE_COL $LINE_COL $LINE_COL $LINE_COL $TITLE_MOON $TITLE_HEART $TITLE_CHEN
+  printf "\n%s %s %s %s %s   ${STYLE_BOLD}%s${STYLE_RESET} ${STYLE_LMAG}%s${STYLE_RESET} ${STYLE_BOLD}%s${STYLE_RESET}${STYLE_BOLD}${STYLE_LMAG}%s%s${STYLE_RESET}${STYLE_BOLD}-D${STYLE_RESET}\n" $LINE_COL $LINE_COL $LINE_COL $LINE_COL $LINE_COL $TITLE_MOON $TITLE_HEART $TITLE_CHEN "${WIDTH_COL:${#daysdiff}}" "$daysdiff"
 
   getTodayList
 
