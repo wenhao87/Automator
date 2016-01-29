@@ -57,6 +57,8 @@ function parse_git_dirty() {
   fi
 }
 
+tput civis
+
 cd /Users/whchen/Public/Github/
 echo ${STYLE_BOLD}${STYLE_CYAN}gst${STYLE_RESET} ${STYLE_WHITE}in ${STYLE_BOLD}${STYLE_YELLOW}`pwd`${STYLE_RESET}
 while :; do
