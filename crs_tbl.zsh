@@ -109,7 +109,10 @@ while :; do
     fi
   }
   for ((i=numCS; i<5; i++)) {
-    printf "\n%s %s %s %s %s" "${EMPTY_COL}" "${EMPTY_COL}" "${EMPTY_COL}" "${EMPTY_COL}" "${EMPTY_COL}"
+    if [[ $i != 0 ]]; then
+      printf "\n"
+    fi
+    printf "%s %s %s %s %s" "${EMPTY_COL}" "${EMPTY_COL}" "${EMPTY_COL}" "${EMPTY_COL}" "${EMPTY_COL}"
   }
   sleep 1
 done
